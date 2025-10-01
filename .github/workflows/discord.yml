@@ -1,0 +1,23 @@
+name: Discord Notifications
+on:
+  push:
+    branches: [ main ]   # change if your default branch is different
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord Notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          COMMITS=$(jq -r '.commits[] | "- \(.author.name): \(.message) (<\(.url)>)"' $GITHUB_EVENT_PATH | tr '\n' '\n')
+          CONTENT="📢 **Push event on $GITHUB_REPOSITORY**\nBranch: ${GITHUB_REF#refs/heads/}\nPusher: $GITHUB_ACTOR\n\nCommits:\n$COMMITS"
+          
+          # escape quotes for JSON
+          PAYLOAD=$(echo "$CONTENT" | jq -Rs '{content: .}')
+          
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "$PAYLOAD" \
+               "$DISCORD_WEBHOOK"
