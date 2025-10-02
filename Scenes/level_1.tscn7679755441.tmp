@@ -1,0 +1,159 @@
+[gd_scene load_steps=12 format=3 uid="uid://32na7ygyt2kx"]
+
+[ext_resource type="Script" uid="uid://oyc2kb1wnen7" path="res://Scenes/character.gd" id="1_8ffim"]
+[ext_resource type="Texture2D" uid="uid://ce8gk8ikvp2bf" path="res://Sprites/Sprite-0003_2.png" id="1_vk57k"]
+[ext_resource type="Script" uid="uid://b0200no6et6ty" path="res://Scenes/obstacle.gd" id="3_xfk5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ffim"]
+size = Vector2(2223, 270)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xfk5q"]
+radius = 2.75
+height = 7.6875
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p6j4"]
+atlas = ExtResource("1_vk57k")
+region = Rect2(108, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6444e"]
+atlas = ExtResource("1_vk57k")
+region = Rect2(0, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evi0p"]
+atlas = ExtResource("1_vk57k")
+region = Rect2(54, 0, 54, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lsmp6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p6j4")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6444e")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evi0p")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7p6j4"]
+radius = 1.75
+height = 9.625
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p6j4"]
+size = Vector2(198.5, 760)
+
+[node name="Level1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Floor" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(972, 945)
+shape = SubResource("RectangleShape2D_8ffim")
+
+[node name="FloorColor" type="ColorRect" parent="StaticBody2D/Floor"]
+offset_left = -1020.0
+offset_top = -135.0
+offset_right = 983.0
+offset_bottom = 148.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Ceiling" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(967, -75)
+shape = SubResource("RectangleShape2D_8ffim")
+
+[node name="CeilingColor" type="ColorRect" parent="StaticBody2D/Ceiling"]
+offset_left = -1020.0
+offset_top = -148.0
+offset_right = 983.0
+offset_bottom = 135.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="StaticBody2D"]
+z_index = -5
+offset_left = -30.0
+offset_top = -25.0
+offset_right = 1990.0
+offset_bottom = 834.0
+color = Color(0.3715274, 0.3213265, 0.3766074, 1)
+metadata/_edit_lock_ = true
+
+[node name="Character" type="CharacterBody2D" parent="."]
+position = Vector2(480, 687)
+scale = Vector2(8, 8)
+script = ExtResource("1_8ffim")
+
+[node name="StandingHitBox" type="CollisionShape2D" parent="Character"]
+position = Vector2(0, -0.5)
+scale = Vector2(4, 4)
+shape = SubResource("CapsuleShape2D_xfk5q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character"]
+sprite_frames = SubResource("SpriteFrames_lsmp6")
+animation = &"run"
+metadata/_edit_lock_ = true
+
+[node name="SlidingHitBox" type="CollisionShape2D" parent="Character"]
+position = Vector2(0, 8)
+rotation = 1.5707964
+scale = Vector2(4, 4)
+shape = SubResource("CapsuleShape2D_7p6j4")
+disabled = true
+metadata/_edit_lock_ = true
+
+[node name="Obstacle" type="StaticBody2D" parent="."]
+position = Vector2(2743, 911)
+script = ExtResource("3_xfk5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
+shape = SubResource("RectangleShape2D_7p6j4")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle/CollisionShape2D"]
+offset_left = -99.0
+offset_top = -380.0
+offset_right = 99.0
+offset_bottom = 380.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Obstacle"]
+position = Vector2(1000, -621)
+shape = SubResource("RectangleShape2D_7p6j4")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle/CollisionShape2D2"]
+offset_left = -99.0
+offset_top = -380.0
+offset_right = 99.0
+offset_bottom = 380.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Obstacle"]
+position = Vector2(1000, -621)
+shape = SubResource("RectangleShape2D_7p6j4")
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle/CollisionShape2D3"]
+offset_left = -99.0
+offset_top = -380.0
+offset_right = 99.0
+offset_bottom = 380.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
