@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://jmf2qeu20ec7"]
+
+[ext_resource type="Script" uid="uid://b0200no6et6ty" path="res://Scenes/obstacle.gd" id="1_15o2q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p6j4"]
+size = Vector2(198.5, 760)
+
+[node name="Obstacle" type="StaticBody2D"]
+position = Vector2(7, -1579)
+script = ExtResource("1_15o2q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(952, 537)
+shape = SubResource("RectangleShape2D_7p6j4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 853.0
+offset_top = 157.0
+offset_right = 1051.0
+offset_bottom = 917.0
+color = Color(0, 0, 0, 1)

@@ -1,8 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://32na7ygyt2kx"]
 
+[ext_resource type="Script" uid="uid://wwxr6uydb4du" path="res://Level1.gd" id="1_7p6j4"]
 [ext_resource type="Script" uid="uid://oyc2kb1wnen7" path="res://Scenes/character.gd" id="1_8ffim"]
 [ext_resource type="Texture2D" uid="uid://ce8gk8ikvp2bf" path="res://Sprites/Sprite-0003_2.png" id="1_vk57k"]
-[ext_resource type="Script" uid="uid://b0200no6et6ty" path="res://Scenes/obstacle.gd" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://jmf2qeu20ec7" path="res://Scenes/obstacle.tscn" id="4_6444e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ffim"]
 size = Vector2(2223, 270)
@@ -54,10 +55,8 @@ animations = [{
 radius = 1.75
 height = 9.625
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p6j4"]
-size = Vector2(198.5, 760)
-
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_7p6j4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -117,58 +116,5 @@ shape = SubResource("CapsuleShape2D_7p6j4")
 disabled = true
 metadata/_edit_lock_ = true
 
-[node name="Obstacle" type="StaticBody2D" parent="."]
-position = Vector2(2743, 911)
-script = ExtResource("3_xfk5q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
-position = Vector2(0, -88)
-shape = SubResource("RectangleShape2D_7p6j4")
-metadata/_edit_lock_ = true
-
-[node name="ColorRect" type="ColorRect" parent="Obstacle/CollisionShape2D"]
-offset_left = -99.0
-offset_top = -380.0
-offset_right = 99.0
-offset_bottom = 380.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Obstacle"]
-position = Vector2(1000, -621)
-shape = SubResource("RectangleShape2D_7p6j4")
-metadata/_edit_lock_ = true
-
-[node name="ColorRect" type="ColorRect" parent="Obstacle/CollisionShape2D2"]
-offset_left = -99.0
-offset_top = -380.0
-offset_right = 99.0
-offset_bottom = 380.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Obstacle"]
-position = Vector2(2017, 65)
-shape = SubResource("RectangleShape2D_7p6j4")
-metadata/_edit_lock_ = true
-
-[node name="ColorRect" type="ColorRect" parent="Obstacle/CollisionShape2D3"]
-offset_left = -99.0
-offset_top = -380.0
-offset_right = 99.0
-offset_bottom = 380.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Obstacle"]
-position = Vector2(2017, -843)
-shape = SubResource("RectangleShape2D_7p6j4")
-metadata/_edit_lock_ = true
-
-[node name="ColorRect" type="ColorRect" parent="Obstacle/CollisionShape2D4"]
-offset_left = -99.0
-offset_top = -380.0
-offset_right = 99.0
-offset_bottom = 380.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_lock_ = true
+[node name="Obstacle" parent="." instance=ExtResource("4_6444e")]
+position = Vector2(2782, 374)
