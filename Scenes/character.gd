@@ -6,14 +6,15 @@ extends CharacterBody2D
 @onready var Animations = $AnimatedSprite2D
 
 var isSliding = false;
-
-func start_slide():
-	$SlidingHitBox.disabled = false
-	$StandingHitBox.disabled = true
 	
-func stop_slide():
+func slide(slide):
+	if slide == true:
+		$SlidingHitBox.disabled = false
+		$StandingHitBox.disabled = true
 	$SlidingHitBox.disabled = true
 	$StandingHitBox.disabled = false
+
+
 
 func _physics_process(delta: float) -> void:
 	# Add gravity
@@ -33,18 +34,14 @@ func _physics_process(delta: float) -> void:
 	# Handle sliding
 	if Input.is_action_pressed("ui_down"):
 		Animations.play("slide")
-		isSliding = true
-		start_slide()
+		slide(true)
 		GRAV_MULT = 8.0
 	elif Input.is_action_just_released("ui_down"):
-		isSliding = false
 		GRAV_MULT = 3.0
-		stop_slide()
+		slide(false)
+		
 
 	move_and_slide()
-
-	if is_on_floor() and abs(velocity.x) < 10:
-		velocity.x = 0
 
 
 	

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvkkh4o34essi"]
+
+[ext_resource type="Texture2D" uid="uid://bgxyflr8c0lsv" path="res://Sprites/death.png" id="1_2hyne"]
+[ext_resource type="Script" uid="uid://dab4oipuuqbig" path="res://Scenes/death.gd" id="2_cdvjj"]
+
+[node name="DeathScene" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1922.0
+offset_bottom = 1082.0
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 509.0
+offset_top = 218.0
+offset_right = 1441.0
+offset_bottom = 817.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_2hyne")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_cdvjj")

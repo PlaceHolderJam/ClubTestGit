@@ -237,4 +237,4 @@ func check_player_bounds():
 	# --- Check if player is out of bounds ---
 	if px < left_limit or px > right_limit or py < top_limit or py > bottom_limit:
 		print("Player went off-screen (%.1f, %.1f). Closing game..." % [px, py])
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://Scenes/DeathScene.tscn")
