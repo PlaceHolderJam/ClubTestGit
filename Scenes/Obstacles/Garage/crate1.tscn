@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d01x48xnuyjru"]
+
+[ext_resource type="Script" uid="uid://dcfnxkrhi3rrh" path="res://Scripts/floor_object.gd" id="1_v50r1"]
+[ext_resource type="Texture2D" uid="uid://bfbnxfy08tscf" path="res://Sprites/obstacles/crate1.png" id="2_0p2i2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0ihs"]
+size = Vector2(31, 24)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["obstacle"]]
+scale = Vector2(8, 8)
+script = ExtResource("1_v50r1")
+flippable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15.5, -12)
+shape = SubResource("RectangleShape2D_t0ihs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15.5, -12)
+texture = ExtResource("2_0p2i2")

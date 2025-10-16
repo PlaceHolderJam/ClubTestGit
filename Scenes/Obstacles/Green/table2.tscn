@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ltolfydaiuch"]
+
+[ext_resource type="Texture2D" uid="uid://d4cik7rlxv8qm" path="res://Sprites/obstacles/Greenstuff_v1_table2.png" id="1_f268f"]
+[ext_resource type="Script" uid="uid://dcfnxkrhi3rrh" path="res://Scripts/floor_object.gd" id="1_lqm3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqm3y"]
+size = Vector2(72, 23)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["obstacle"]]
+scale = Vector2(8, 8)
+script = ExtResource("1_lqm3y")
+flippable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(36, -11.5)
+shape = SubResource("RectangleShape2D_lqm3y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(36, -21.5)
+texture = ExtResource("1_f268f")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw6gnruarmgvb"]
+
+[ext_resource type="Script" uid="uid://1wva72umvolk" path="res://Scenes/Obstacles/Garage/gate_2.gd" id="1_bxl80"]
+[ext_resource type="Texture2D" uid="uid://djio1ikj146kt" path="res://Sprites/obstacles/gate2.png" id="1_lhb7y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxl80"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mx8l"]
+size = Vector2(28, 46)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["obstacle"]]
+scale = Vector2(8, 8)
+script = ExtResource("1_bxl80")
+
+[node name="TopPart1" type="CollisionShape2D" parent="."]
+position = Vector2(16, -55)
+shape = SubResource("RectangleShape2D_bxl80")
+
+[node name="TopPart2" type="CollisionShape2D" parent="."]
+position = Vector2(18, -86)
+shape = SubResource("RectangleShape2D_6mx8l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, -77)
+texture = ExtResource("1_lhb7y")
+
+[node name="TopPart1_2" type="CollisionShape2D" parent="."]
+position = Vector2(16.000002, 55)
+shape = SubResource("RectangleShape2D_bxl80")
+
+[node name="TopPart2_2" type="CollisionShape2D" parent="."]
+position = Vector2(18, 86)
+shape = SubResource("RectangleShape2D_6mx8l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(16.000002, 77)
+rotation = 3.1415927
+texture = ExtResource("1_lhb7y")

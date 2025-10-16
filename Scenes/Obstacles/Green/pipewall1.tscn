@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://clphmbtetosre"]
+
+[ext_resource type="Texture2D" uid="uid://dawd8nvb5cyiy" path="res://Sprites/obstacles/Greenstuff_v1_pipewall.png" id="1_br3nl"]
+[ext_resource type="Script" uid="uid://dcfnxkrhi3rrh" path="res://Scripts/floor_object.gd" id="1_v1sgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uj5yh"]
+size = Vector2(76, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42p22"]
+size = Vector2(72, 59)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["obstacle"]]
+scale = Vector2(8, 8)
+script = ExtResource("1_v1sgo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(35.5, -50.5)
+texture = ExtResource("1_br3nl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(38, -11)
+shape = SubResource("RectangleShape2D_uj5yh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(36, -71.5)
+shape = SubResource("RectangleShape2D_42p22")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvqyc2akvbc5u"]
+
+[ext_resource type="Texture2D" uid="uid://cotvrtpivi4ht" path="res://Sprites/play_button.png" id="1_ekrfg"]
+[ext_resource type="Script" uid="uid://3tg75qocr8so" path="res://Scenes/play_button.gd" id="2_fp2oq"]
+
+[node name="Title" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -1.999939
+offset_top = -2.0
+offset_right = 38.00006
+offset_bottom = 38.0
+scale = Vector2(48.16148, 27.106312)
+color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 729.0
+offset_top = 439.00003
+offset_right = 1249.0
+offset_bottom = 959.0
+scale = Vector2(0.8271938, 0.55547446)
+icon = ExtResource("1_ekrfg")
+script = ExtResource("2_fp2oq")

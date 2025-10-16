@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce8gk8ikvp2bf"
-path="res://.godot/imported/Sprite-0003_2.png-fac76c3785a58855bb0206abb1d4b3f8.ctex"
+uid="uid://e15ocr3xbilj"
+path="res://.godot/imported/Hallway_Green_Exit_v1.png-6413ce1c272c9c8cd62554e89e516e1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sprite-0003_2.png"
-dest_files=["res://.godot/imported/Sprite-0003_2.png-fac76c3785a58855bb0206abb1d4b3f8.ctex"]
+source_file="res://Sprites/backgrounds/Hallway_Green_Exit_v1.png"
+dest_files=["res://.godot/imported/Hallway_Green_Exit_v1.png-6413ce1c272c9c8cd62554e89e516e1d.ctex"]
 
 [params]
 

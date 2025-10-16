@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0awf4501dqp2"]
+
+[ext_resource type="Script" uid="uid://cs31hfalnu67b" path="res://Scripts/ceiling_object.gd" id="1_las5l"]
+[ext_resource type="Texture2D" uid="uid://fgb2isiard7n" path="res://Sprites/obstacles/pipe1_v2.png" id="2_las5l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rl5cs"]
+size = Vector2(94, 37)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wyoy"]
+height = 94.0
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["obstacle"]]
+scale = Vector2(8, 8)
+script = ExtResource("1_las5l")
+topCollidable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(49, 11.5)
+shape = SubResource("RectangleShape2D_rl5cs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(49, 16.5)
+texture = ExtResource("2_las5l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(49, 29)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6wyoy")

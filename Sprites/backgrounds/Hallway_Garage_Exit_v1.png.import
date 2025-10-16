@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bba2h8tejx4vj"
-path="res://.godot/imported/Sprite-0003.png-a57987ab30c3ac4e54f210a80d13e8a7.ctex"
+uid="uid://cg5mgwm45lysd"
+path="res://.godot/imported/Hallway_Garage_Exit_v1.png-c5827f05f8076e158edbb2919969cbc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sprite-0003.png"
-dest_files=["res://.godot/imported/Sprite-0003.png-a57987ab30c3ac4e54f210a80d13e8a7.ctex"]
+source_file="res://Sprites/backgrounds/Hallway_Garage_Exit_v1.png"
+dest_files=["res://.godot/imported/Hallway_Garage_Exit_v1.png-c5827f05f8076e158edbb2919969cbc7.ctex"]
 
 [params]
 

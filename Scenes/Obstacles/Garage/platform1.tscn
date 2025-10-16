@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhy22rrk4cbfj"]
+
+[ext_resource type="Script" uid="uid://bklhlc4hulpcy" path="res://Scripts/platforms.gd" id="1_k4hyd"]
+[ext_resource type="Texture2D" uid="uid://cgl8ppyqb3rmg" path="res://Sprites/obstacles/platform1_v2.png" id="2_k4hyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pojiq"]
+size = Vector2(93, 6)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["obstacle"]]
+scale = Vector2(8, 8)
+script = ExtResource("1_k4hyd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(46.5, 3)
+shape = SubResource("RectangleShape2D_pojiq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(46.5, -45)
+texture = ExtResource("2_k4hyd")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://c10wv85n3k4t"]
+
+[ext_resource type="Texture2D" uid="uid://d4ic4st0tn11o" path="res://Sprites/obstacles/Greenstuff_v1_cabinet2.png" id="1_nasim"]
+[ext_resource type="Script" uid="uid://dcfnxkrhi3rrh" path="res://Scripts/floor_object.gd" id="1_owv2r"]
+[ext_resource type="PackedScene" uid="uid://dibr1nw4pii15" path="res://Scenes/Obstacles/Green/table1.tscn" id="2_nxueu"]
+[ext_resource type="PackedScene" uid="uid://ltolfydaiuch" path="res://Scenes/Obstacles/Green/table2.tscn" id="3_5khpu"]
+[ext_resource type="PackedScene" uid="uid://clphmbtetosre" path="res://Scenes/Obstacles/Green/pipewall1.tscn" id="4_5khpu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owv2r"]
+size = Vector2(26, 58)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["obstacle"]]
+scale = Vector2(8, 8)
+disable_mode = 2
+script = ExtResource("1_owv2r")
+canFollow = Array[PackedScene]([ExtResource("2_nxueu"), ExtResource("3_5khpu"), ExtResource("4_5khpu")])
+flippable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, -29)
+shape = SubResource("RectangleShape2D_owv2r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, -33)
+texture = ExtResource("1_nasim")

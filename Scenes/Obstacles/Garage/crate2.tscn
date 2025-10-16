@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://diqvd5myhwe8i"]
+
+[ext_resource type="Script" uid="uid://dcfnxkrhi3rrh" path="res://Scripts/floor_object.gd" id="1_r8nc0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a8q1"]
+size = Vector2(29, 48)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tkc55"]
+load_path = "res://.godot/imported/crate2.png-7be381906c7cf09a7233203bfc2e5d05.ctex"
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["obstacle"]]
+scale = Vector2(8, 8)
+script = ExtResource("1_r8nc0")
+flippable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16.5, -24)
+shape = SubResource("RectangleShape2D_8a8q1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, -24)
+texture = SubResource("CompressedTexture2D_tkc55")
